@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: jenkins-test-svc
+  name: jenkins-test-svc
+spec:
+  ports:
+    - name: jenkins-test-port
+      port: 80
+      protocol: TCP
+      targetPort: 80
+      nodePort: 30010
+  selector:
+    app: jenkins-test
+  type: NodePort
